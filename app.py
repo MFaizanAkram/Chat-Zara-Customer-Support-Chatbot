@@ -12,7 +12,7 @@ warnings.filterwarnings('ignore')
 #---------------------------------------------------------------------------------------------#
 
 load_dotenv("env")
-GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 GROQ_MODEL   = "llama-3.3-70b-versatile"
 
 BASE          = os.path.dirname(os.path.abspath(__file__))
