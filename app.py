@@ -17,6 +17,8 @@ try:
 except:
     GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 
+GROQ_MODEL = "llama-3.3-70b-versatile"
+
 BASE          = os.path.dirname(os.path.abspath(__file__))
 INDEX_PATH    = os.path.join(BASE, "rag_vector_store", "faiss_index.bin")
 METADATA_PATH = os.path.join(BASE, "rag_vector_store", "chunks_metadata.json")
