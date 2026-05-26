@@ -11,9 +11,11 @@ from dotenv import load_dotenv
 warnings.filterwarnings('ignore')
 #---------------------------------------------------------------------------------------------#
 
-load_dotenv("env")
-GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
-GROQ_MODEL   = "llama-3.3-70b-versatile"
+load_dotenv()
+try:
+    GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+except:
+    GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 
 BASE          = os.path.dirname(os.path.abspath(__file__))
 INDEX_PATH    = os.path.join(BASE, "rag_vector_store", "faiss_index.bin")
